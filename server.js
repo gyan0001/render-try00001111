@@ -15,7 +15,7 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(express.static('public'));
+app.use(express.static('Public'));
 app.use(bodyParser.json());
 
 // Store conversation history for context
@@ -226,7 +226,7 @@ My systems are usually back online quickly. No worries - I'll be here to help!`;
 
 // Root route
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, 'Public', 'index.html'));
 });
 
 // Health check with brain status
@@ -256,4 +256,5 @@ app.listen(PORT, () => {
   console.log(` Activated on port http://localhost:3000 `);
   console.log(`Air NZ Intelligent Assistant is LIVE!`);
   console.log(` Memory system: Active (${conversationHistory.size} conversations)`);
+
 });
